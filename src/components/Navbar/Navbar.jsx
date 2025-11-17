@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import Jobs from "../Jobs/Jobs";
 import "./Navbar.css";
-
+import "../Logout/logout"
+import Logout from "../Logout/logout";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+    const storedUser = JSON.parse(localStorage.getItem("user"));
   return (
     <header className="navbar">
       <div className="logo">JobPortal</div>
@@ -28,14 +29,18 @@ const Navbar = () => {
         <Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
       </nav>
 
-      <div className="nav-buttons">
-        <Link to="/login">
-          <button className="login-btn">Login</button>
-        </Link>
-        <Link to="/signup">
-          <button className="signup-btn">Sign Up</button>
-        </Link>
-      </div>
+       {storedUser ? (
+        <>
+                <span className="welcome">Welcome, {storedUser.name} 👋</span>
+                <Logout/>   
+                </>
+              ) : (
+                <>
+                  <Link className="login-btn" to="/login">Login</Link>
+                  <Link className="signup-btn" to="/signup">Sign Up</Link>
+                </>
+              )}
+         
     </header>
   );
 };

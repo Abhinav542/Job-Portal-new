@@ -12,18 +12,32 @@ export default function Login() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Dummy validation
-    if (formData.email !== "test@example.com" || formData.password !== "12345") {
-      setError("Invalid email or password. Please try again.");
-      return;
-    }
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setError("");
-    alert("✅ Login Successful!");
-    navigate("/home"); // 👈 redirect after login
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.message || "Login failed");
+        return;
+      }
+
+      // Save token & user
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      setError("");
+      navigate("/home");
+    } catch (err) {
+      setError("Something went wrong. Try again.");
+    }
   };
 
   const closeError = () => setError("");
@@ -69,6 +83,7 @@ export default function Login() {
 
           <button type="submit" className="login-btn">Login</button>
         </form>
+
         <p className="signup-text">
           Don’t have an account? <Link to="/signup">Sign up</Link>
         </p>
