@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Google",
+    "industry": "Technology",
+    "location": "USA",
+    "jobs": 42,
+    "logo": "https://logo.clearbit.com/google.com",
+    "website": "https://google.com",
+    "description": "Google specializes in internet services, cloud technologies, and AI."
+  },
+  {
+    "id": 2,
+    "name": "Infosys",
+    "industry": "IT Services",
+    "location": "India",
+    "jobs": 28,
+    "logo": "https://logo.clearbit.com/infosys.com",
+    "website": "https://infosys.com",
+    "description": "Infosys provides IT consulting and digital transformation services."
+  },
+  {
+    "id": 3,
+    "name": "Amazon",
+    "industry": "E-commerce & Cloud",
+    "location": "USA",
+    "jobs": 35,
+    "logo": "https://logo.clearbit.com/amazon.com",
+    "website": "https://amazon.com",
+    "description": "Amazon offers cloud computing, e-commerce, digital streaming, and AI services."
+  },
+   {
+    "id": 4,
+    "name": "Google",
+    "industry": "Technology",
+    "location": "USA",
+    "jobs": 42,
+    "logo": "https://logo.clearbit.com/google.com",
+    "website": "https://google.com",
+    "description": "Google specializes in internet services, cloud technologies, and AI."
+  }
+]

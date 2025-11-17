@@ -1,0 +1,84 @@
+.section {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #222;
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+}
+
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 15px 5px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.card {
+  min-width: 160px;
+  padding: 18px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  /* background: #004080; */
+  /* color: white; */
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow Buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: black;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 0.3s, transform 0.3s;
+  z-index: 10;
+}
+
+.arrow:hover {
+  color: #ff6600;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow.left {
+  left: -10px;
+}
+
+.arrow.right {
+  right: -10px;
+}
+
+/* Responsive */
+@media (max-width: 768

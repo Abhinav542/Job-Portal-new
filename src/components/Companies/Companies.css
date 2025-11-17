@@ -1,0 +1,194 @@
+/* Page Container */
+.companies-container {
+  width: 100%;
+  padding: 20px 0 60px;
+  background: #f8fafc;
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------------- SECTION A: HERO ---------------- */
+.companies-hero {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #eef2ff, #f1f5f9);
+}
+
+.companies-hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.companies-hero p {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #475569;
+}
+
+/* ---------------- Filters ---------------- */
+.company-filters {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.company-filters select {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 15px;
+  color: #1f2937;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.company-filters select:hover {
+  border-color: #6366f1;
+  background: #f8fafc;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.15);
+}
+
+/* ---------------- Companies Grid ---------------- */
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  width: 90%;
+  margin: auto;
+}
+
+.company-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.company-logo {
+  height: 55px;
+  margin-bottom: 15px;
+}
+
+.company-card h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #1e293b;
+}
+
+.company-card p {
+  color: #475569;
+  margin: 4px 0;
+}
+
+.company-meta {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.rating {
+  font-size: 18px;
+  color: #f59e0b;
+  margin: 8px 0 15px;
+}
+
+.view-jobs-btn {
+  padding: 10px 16px;
+  background: #6366f1;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.view-jobs-btn:hover {
+  background: #4f46e5;
+}
+
+/* ---------------- SECTION F: CTA ---------------- */
+.companies-cta {
+  text-align: center;
+  margin-top: 60px;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e0e7ff, #f1f5f9);
+  border-radius: 16px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.companies-cta h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.companies-cta p {
+  color: #475569;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.companies-cta button {
+  margin-top: 18px;
+  background: #4f46e5;
+  border: none;
+  padding: 12px 22px;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.companies-cta button:hover {
+  background: #4338ca;
+}
+
+
+.companies-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.companies-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1e293b;
+}
+.companies-header p {
+  color: #475569;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.filter-bar{
+  width: 90%;
+  margin: auto;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.filter-bar select{
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: white;
+  font-size: 15px;
+  color: #1f2937;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
