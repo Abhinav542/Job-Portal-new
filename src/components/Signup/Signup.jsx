@@ -1,9 +1,13 @@
+
 import React, { useState } from "react";
 import "./SignUp.css";
 import bgImage1 from "../../assets/Signup-bg.webp";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
+
+  const storedUser = JSON.parse(localStorage.getItem("user")) || null;
+  
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -12,13 +16,14 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   });
+
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validation
@@ -31,9 +36,38 @@ export default function SignUp() {
       return;
     }
 
-    setError("");
-    alert("✅ Signup successful!");
-    navigate("/home"); // 👈 redirect to home after signup
+    try {
+      // SEND DATA TO BACKEND
+      const response = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || "Signup failed!");
+        return;
+      }
+
+      // ⭐ SAVE USER + TOKEN
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      alert("✅ Signup Successful!");
+      navigate("/home");
+
+    } catch (err) {
+      console.error(err);
+      setError("Failed to connect to server.");
+    }
   };
 
   const closeError = () => setError("");
@@ -52,7 +86,9 @@ export default function SignUp() {
 
       <div className="signup-box">
         <h2 className="signup-title">Sign Up</h2>
+
         <form onSubmit={handleSubmit} className="signup-form">
+
           <div className="form-group">
             <label>Full Name</label>
             <input
@@ -103,6 +139,7 @@ export default function SignUp() {
 
           <button type="submit" className="signup-btn">Sign Up</button>
         </form>
+
         <p className="login-text">
           Already have an account? <Link to="/login">Login</Link>
         </p>
