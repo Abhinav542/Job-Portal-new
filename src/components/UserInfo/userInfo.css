@@ -1,0 +1,147 @@
+/* .profile_img{
+    width: 200px;
+    height: 200pxs;
+}
+
+.body{
+    width: 70vw;
+    height: 90vh;
+    overflow-y: scroll;
+    background-color: grey;
+    margin: auto;
+    padding: 20px;
+    /* padding: auto; 
+} */
+
+/* Main Container */
+.body {
+    width: 80%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Profile Section */
+.body > div {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile_img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #4b7bec;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #222;
+}
+
+h3 {
+    margin: 15px 0 10px;
+    color: #4b7bec;
+    font-weight: 600;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fafafa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #4b7bec;
+    background: #fff;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+}
+
+/* Save Button */
+.saveBtn {
+    margin-top: 20px;
+    padding: 12px;
+    background: #4b7bec;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.saveBtn:hover {
+    background: #3867d6;
+    transform: translateY(-2px);
+}
+
+/* Section spacing */
+form h3 {
+    margin-top: 25px;
+    color: #333;
+    border-left: 4px solid #4b7bec;
+    padding-left: 8px;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .body {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .profile_img {
+        width: 100px;
+        height: 100px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .saveBtn {
+        font-size: 14px;
+    }
+}

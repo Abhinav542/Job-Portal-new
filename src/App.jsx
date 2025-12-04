@@ -9,6 +9,10 @@ import Companies from "./components/Companies/Companies";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import Navbar from "./components/Navbar/Navbar2";
+
+//  Just for testing purpose
+
+import UserInfo from "./components/UserInfo/UserInfo";
 export default function App() {
   // Load user from localStorage (if logged in)
   const storedUser = JSON.parse(localStorage.getItem("user")) || null;
@@ -37,6 +41,9 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} /> 
         </>
+
+        {/* Just for testing */}
+        <Route path="/user" element={<UserInfo />} />
       </Routes>
     </Router>
   );
