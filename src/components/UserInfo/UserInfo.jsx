@@ -203,6 +203,7 @@ export default function UserInfo() {
                 <input
                     id="experience"
                     type="number"
+                    min={0}
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}
                     placeholder="2"
