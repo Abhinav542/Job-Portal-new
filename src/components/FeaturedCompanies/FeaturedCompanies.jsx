@@ -1,6 +1,7 @@
 import React from "react";
 import "./FeaturedCompanies.css";
 
+
 const FeaturedCompanies = () => {
   const companies = [
     { id: 1, name: "TGC", logo: "https://www.pngkey.com/png/full/888-8885651_prizejudges-tgc-logo.png" },

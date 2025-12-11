@@ -222,6 +222,7 @@ export default function Companies() {
           <button>Create Your Profile</button>
         </div>
       </div>
+     
     </>
   );
 }

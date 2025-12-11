@@ -5,6 +5,8 @@ import aboutWork from "../../assets/about-work.jpg";
 import aboutTeam from "../../assets/about-team.avif";
 import aboutGoal from "../../assets/about-goal.jpg";
 import Navbar from "../Navbar/Navbar";
+// import Footer from "../Footer/Footer";
+
 
 const About = () => {
   return (
@@ -136,6 +138,7 @@ const About = () => {
         <a className="cta-button" href="/jobs">Explore Jobs</a>
       </section>
     </div>
+    {/* <Footer/> */}
     </>
   );
 };

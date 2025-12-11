@@ -10,6 +10,7 @@ import Howwework from "../../assets/How we work.png";
 import TopHire from "../../assets/top hiring.jpg";
 import { useNavigate } from "react-router-dom";
 
+
 const Hero = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
@@ -159,6 +160,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      
     </>
   );
 };
