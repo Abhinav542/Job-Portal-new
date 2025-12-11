@@ -12,6 +12,8 @@ import TopHire from "../../assets/top hiring.jpg";
 import { useNavigate } from "react-router-dom";
 
 const Hero = ({ user }) => {   // 🟢 Accept user prop
+
+const Hero = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("");
   const [experience, setExperience] = useState("");
@@ -168,6 +170,7 @@ const Hero = ({ user }) => {   // 🟢 Accept user prop
           </div>
         </div>
       </section>
+      
     </>
   );
 };

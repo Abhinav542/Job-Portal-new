@@ -1,6 +1,8 @@
 
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
+// Pages
 import Login from "./components/login/Login";
 import SignUp from "./components/Signup/Signup";
 import HeroSection from "./components/Hero/Hero";
@@ -21,8 +23,21 @@ export default function App() {
   // Load user from localStorage (if logged in)
   const storedUser = JSON.parse(localStorage.getItem("user")) || null;
   // console.log(storedUser.name);
+// Global Components
+import Footer from "./components/Footer/Footer";
+
+// Wrapper to handle footer visibility
+function AppLayout() {
+  const location = useLocation();
+
+  // ❌ Routes where Footer should NOT be shown
+  const hideFooterRoutes = ["/login", "/signup"];
+
+  // Check current route
+  const hideFooter = hideFooterRoutes.includes(location.pathname);
+
   return (
-    <Router>
+    <>
       <Routes>
         {/* Home */}
         <Route path="/" element={<HeroSection user={storedUser} />} />
@@ -42,6 +57,7 @@ export default function App() {
 
         {/* Auth */}
         <>
+        {/* Auth Pages */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} /> 
         </>
@@ -54,6 +70,17 @@ export default function App() {
         {/* Just for testing */}
         <Route path="/user" element={<UserInfo />} />
       </Routes>
+
+      {/* Footer shown only when allowed */}
+      {!hideFooter && <Footer />}
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <AppLayout />
     </Router>
   );
 }

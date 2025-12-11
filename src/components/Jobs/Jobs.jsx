@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./Jobs.css";
 import Navbar from "../Navbar/Navbar";
 
+
 /*
 Features:
 - Fetches jobs from a remote API (if available), falls back to local dataset.
@@ -767,7 +768,9 @@ function ApplyForm({ job, onCancel, onSubmit }) {
         </button>
       </div>
     </form>
+    
   );
+  
 }
 
 export default Jobs;
