@@ -30,6 +30,7 @@ const FeaturedCompanies = () => {
           {companies.concat(companies).map((company, index) => (
             <div className="slide" key={index}>
               <img src={company.logo} alt={company.name} />
+              {console.log(company.logo)}
             </div>
           ))}
         </div>

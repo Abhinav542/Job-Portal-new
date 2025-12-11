@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import "./Hero.css";
 import { FaSearch, FaMapMarkerAlt, FaBriefcase } from "react-icons/fa";
@@ -10,6 +11,7 @@ import Howwework from "../../assets/How we work.png";
 import TopHire from "../../assets/top hiring.jpg";
 import { useNavigate } from "react-router-dom";
 
+const Hero = ({ user }) => {   // 🟢 Accept user prop
 
 const Hero = () => {
   const [jobTitle, setJobTitle] = useState("");
@@ -33,6 +35,14 @@ const Hero = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="Data">
+
+          {/* 🟢 Show logged-in user's name
+          {user && (
+            <h2 className="welcome-text" style={{ color: "#fff", marginBottom: "10px" }}>
+              Welcome, {user.name} 👋
+            </h2>
+          )} */}
+
           <h1 className="hero-title">Find Your Dream Job</h1>
           <p className="hero-subtitle">
             Search jobs by title, location, and experience

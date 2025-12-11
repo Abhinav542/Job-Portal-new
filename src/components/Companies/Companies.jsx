@@ -11,7 +11,7 @@ const companiesData = [
     location: "Mumbai",
     size: "1000+",
     rating: 5,
-    logo: "https://1000logos.net/wp-content/uploads/2021/05/TCS-logo.png",
+    logo: "../public/CompaniesImg/tcs.png",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const companiesData = [
     location: "Bangalore",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Infosys_logo.svg",
+    logo: "../public/CompaniesImg/infosys.png",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const companiesData = [
     location: "Gurgaon",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/02/Airtel_logo.svg",
+    logo: "../public/CompaniesImg/airtel.png",
   },
   {
     id: 4,
@@ -198,7 +198,8 @@ export default function Companies() {
           {filtered.map((c) => (
             <div className="company-card" key={c.id}>
               <img src={c.logo} alt={c.name} className="company-logo" />
-
+              {console.log(c.logo)}
+              
               <h3>{c.name}</h3>
               <p className="company-industry">{c.industry}</p>
               <p className="company-meta">
