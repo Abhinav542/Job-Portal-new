@@ -32,7 +32,7 @@ const Navbar = () => {
        {storedUser ? (
         <>
           <Link to="/user" className="userNameLink"><span className="userName">Welcome, {storedUser.name} </span></Link>
-                
+          <Link to={"/create-job"} className="create-job">Create A Job 😁</Link> 
                 <Logout/>   
                 </>
               ) : (

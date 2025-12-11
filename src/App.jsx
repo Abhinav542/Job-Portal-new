@@ -105,7 +105,9 @@ import UserInfo from "./components/UserInfo/UserInfo";
 import AdminLogin from "./admin/AdminLogin";
 import Dashboard from "./admin/Dashboard";
 import Users from "./admin/Users";
+// Create Job
 
+import CreateJob from "./createJob/CreateJob";
 export default function App() {
 
   // Load logged-in user
@@ -153,6 +155,9 @@ export default function App() {
 
         {/* Testing */}
         <Route path="/user" element={<UserInfo />} />
+
+        {/* Create Job */}
+        <Route path="/create-job" element={<CreateJob />} />
       </Routes>
 
       {/* Footer is hidden on login/signup */}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./companies.css";
 import Navbar from "../Navbar/Navbar"; // 👈 using your own navbar
+import { Link } from "react-router-dom";
 
 
 const companiesData = [
@@ -56,7 +57,7 @@ const companiesData = [
     location: "Mumbai",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Reliance_Jio_Logo.svg",
+    logo: "../public/CompaniesImg/mota.png",
   },
   {
     id: 7,
@@ -65,7 +66,7 @@ const companiesData = [
     location: "Pune",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Accenture-logo.png",
+    logo: "../public/CompaniesImg/acc.png",
   },
   {
     id: 8,
@@ -74,7 +75,7 @@ const companiesData = [
     location: "Noida",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0c/HCL_Technologies_logo.svg",
+    logo: "../public/CompaniesImg/hcl.png",
   },
   {
     id: 9,
@@ -83,7 +84,7 @@ const companiesData = [
     location: "Bangalore",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Wipro_Logo.png",
+    logo: "../public/CompaniesImg/wipro.png",
   },
   {
     id: 10,
@@ -92,7 +93,7 @@ const companiesData = [
     location: "Gurgaon",
     size: "1000+",
     rating: 5,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Deloitte_Logo.png",
+    logo: "../public/CompaniesImg/d.png",
   },
   {
     id: 11,
@@ -101,7 +102,7 @@ const companiesData = [
     location: "Bangalore",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flipkart_logo.png",
+    logo: "../public/CompaniesImg/f.png",
   },
   {
     id: 12,
@@ -110,7 +111,7 @@ const companiesData = [
     location: "Mumbai",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Capgemini_201x_logo.svg",
+    logo: "../public/CompaniesImg/c.png",
   },
   {
     id: 13,
@@ -119,7 +120,7 @@ const companiesData = [
     location: "Pune",
     size: "1000+",
     rating: 4,
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Tech_Mahindra_New_Logo.svg",
+    logo: "../public/CompaniesImg/mahindra.png",
   },
   {
     id: 14,
@@ -198,7 +199,7 @@ export default function Companies() {
           {filtered.map((c) => (
             <div className="company-card" key={c.id}>
               <img src={c.logo} alt={c.name} className="company-logo" />
-              {console.log(c.logo)}
+              {/* {console.log(c.logo)} */}
               
               <h3>{c.name}</h3>
               <p className="company-industry">{c.industry}</p>
@@ -220,7 +221,7 @@ export default function Companies() {
         <div className="companies-cta">
           <h2>Build Your Career Faster</h2>
           <p>Get matched with top companies based on your skills & experience.</p>
-          <button>Create Your Profile</button>
+          <Link to={"/user"}><button>Create Your Profile</button></Link>
         </div>
       </div>
      

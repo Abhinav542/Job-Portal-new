@@ -42,7 +42,7 @@
 }
 
 .nav-buttons button {
-  margin-left: 12px;
+  margin-left: 10px;
   padding: 8px 18px;
   border: none;
   cursor: pointer;
@@ -146,4 +146,17 @@
 .userNameLink{
   text-decoration: none;
 
+}
+
+.create-job{
+  text-decoration: none;
+  color: white;
+  position:fixed;
+  right: 3vw;
+  bottom: 10vh;
+  background-color: #003366;
+  width: 15vw;
+  height: 5vh;
+  text-align: center;
+  font-size: 30px;
 }
