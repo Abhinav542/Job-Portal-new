@@ -135,3 +135,15 @@
     display: none; /* hide on mobile */
   }
 }
+
+
+/* // user name css */
+
+.userName {
+  color: white;
+  /* text-decoration: ; */
+}
+.userNameLink{
+  text-decoration: none;
+
+}

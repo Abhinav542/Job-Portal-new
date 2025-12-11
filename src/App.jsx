@@ -10,6 +10,10 @@ import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import Navbar from "./components/Navbar/Navbar2";
 
+// importing admin files
+import AdminLogin from "./admin/AdminLogin";
+import Dashboard from "./admin/Dashboard";
+import Users from "./admin/Users";
 //  Just for testing purpose
 
 import UserInfo from "./components/UserInfo/UserInfo";
@@ -41,7 +45,12 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} /> 
         </>
-
+        {/* admin roles */}
+        <>
+         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/users" element={<Users />} />
+        </>
         {/* Just for testing */}
         <Route path="/user" element={<UserInfo />} />
       </Routes>

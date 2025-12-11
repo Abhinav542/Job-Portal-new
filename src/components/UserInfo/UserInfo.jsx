@@ -49,8 +49,7 @@
 //         </div>
 //     )
 // }
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./userInfo.css";
 
 export default function UserInfo() {
@@ -75,12 +74,32 @@ export default function UserInfo() {
     const [portfolio, setPortfolio] = useState(savedData.portfolio || "");
     const [bio, setBio] = useState(savedData.bio || "");
 
+    // Profile Img
+    const [profileImg, setProfileImg] = useState(savedData.profileImg || "/images/userImg.png");
+
+    // Ref for hidden file input
+    const fileInputRef = useRef(null);
+
     useEffect(() => {
         if (storedUser) {
             setName(storedUser.name);
             setEmail(storedUser.email);
         }
     }, [storedUser]);
+
+    const handleImageClick = () => {
+        fileInputRef.current.click(); // Open file picker
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const imageUrl = URL.createObjectURL(file);
+            setProfileImg(imageUrl);
+        } else {
+            alert("Please select a valid image file.");
+        }
+    };
 
     // SAVE FUNCTION
     const saveDetails = () => {
@@ -94,7 +113,8 @@ export default function UserInfo() {
             qualification,
             resume,
             portfolio,
-            bio
+            bio,
+            profileImg
         };
 
         localStorage.setItem("candidateInfo", JSON.stringify(data));
@@ -102,13 +122,22 @@ export default function UserInfo() {
     };
 
     return (
+        <div className="full_body">
         <div className="body">
+            {/* Hidden file input */}
+            <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+            />
 
-            <div>
+            <div onClick={handleImageClick} style={{ cursor: "pointer" }}>
                 <img
                     className="profile_img"
-                    src="../../../public/images/userImg.png"
-                    alt="Profile Image"
+                    src={profileImg}
+                    alt="Profile"
                 />
                 <h2>{name}</h2>
                 <h3>{email}</h3>
@@ -219,13 +248,12 @@ export default function UserInfo() {
                     rows="3"
                 ></textarea>
 
-                {/* SAVE BUTTON */}
                 <br /><br />
                 <button className="saveBtn" onClick={saveDetails}>
                     Save Details
                 </button>
-
             </form>
+        </div>
         </div>
     );
 }

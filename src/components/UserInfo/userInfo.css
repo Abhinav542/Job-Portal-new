@@ -14,12 +14,19 @@
 } */
 
 /* Main Container */
+.full_body{
+    background-color: rgb(111, 162, 213);
+    /* width: 100%; */
+    margin: 0;
+    padding: 20px;
+}
 .body {
     width: 80%;
     max-width: 850px;
-    margin: 30px auto;
+    margin:  auto;
     padding: 25px;
     background: #ffffff;
+    /* background: #003366; */
     border-radius: 12px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     font-family: "Poppins", sans-serif;
