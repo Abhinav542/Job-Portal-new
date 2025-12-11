@@ -51,7 +51,7 @@
 // }
 import React, { useEffect, useState, useRef } from "react";
 import "./userInfo.css";
-
+import Navbar from "../Navbar/Navbar";
 export default function UserInfo() {
     const storedUser = JSON.parse(localStorage.getItem("user")) || null;
     const savedData = JSON.parse(localStorage.getItem("candidateInfo")) || {};
@@ -123,6 +123,7 @@ export default function UserInfo() {
 
     return (
         <div className="full_body">
+        <Navbar/>
         <div className="body">
             {/* Hidden file input */}
             <input

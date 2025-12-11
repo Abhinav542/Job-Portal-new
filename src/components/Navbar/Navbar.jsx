@@ -31,7 +31,7 @@ const Navbar = () => {
 
        {storedUser ? (
         <>
-          <Link to="/user" className="userNameLink"><span className="userName">Welcome, {storedUser.name} 👋</span></Link>
+          <Link to="/user" className="userNameLink"><span className="userName">Welcome, {storedUser.name} </span></Link>
                 
                 <Logout/>   
                 </>
